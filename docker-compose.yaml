@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+
+  ui:
+    restart: always
+    # volumes:
+    #   - /etc/hosts:/etc/hosts
+    #   - ./game-of-pods-ui/src:/build/src
+    #   - ./game-of-pods-ui/angular.json:/build/angular.json
+    #   - ./game-of-pods-ui/tsconfig.json:/build/tsconfig.json
+    image: playground:poker-planing-ui
+    build:
+      context: ./poker-planing
+      dockerfile: Dockerfile
+      args:
+        ANGULAR_VERSION: 9.0.4
+    ports:
+      - "4201:4201"
+    volumes:
+       - ./poker-planing:/usr/src/app/poker-planing-ui
+       - /poker-planing/node_modules
+    container_name: poker-planing-ui
+  nodejs-server:
+    build:
+      context: ./poker-api
+      dockerfile: Dockerfile
+    ports:
+      - "3080:3080"
+    container_name: poker-api
+    volumes:
+       - ./poker-api:/usr/src/app/api
+       - /usr/src/app/api/node_modules

@@ -1,0 +1,95 @@
+<h1>Poker planning project</h1>
+
+Models:
+    <ul>
+        <li> - cards </li>
+        <li> - participants </li>
+        <li> - tickets </li>
+        <li> - estimation </li>
+        <li> - configuration (jira) </li>
+    </ul>
+    <mat-tab-group>
+        <mat-tab label="Cards"> 
+            <div>
+                Componente Card:<br>
+                <li>id</li>
+                <li>value</li>
+                <li>description</li>
+            </div>    
+        </mat-tab>
+        <mat-tab label="Participants">
+            <div>
+                Componente Participant:<br>
+                <li>id</li>
+                <li>Name</li>
+                <li>mail</li>
+                <li>team</li>
+                <br>
+                <li>getCards()</li>
+                <li>drawCard()</li>
+            </div>    
+        </mat-tab>
+        <mat-tab label="Tickets">
+            <div>
+                Componente Ticket:<br>
+                <li>id</li>
+                <li>title</li>
+                <li>description</li>
+                <li>link</li>
+                <li>estimation</li>
+                <br>
+                <li>estimate()</li>
+                <li>assign()</li>
+            </div>    
+        </mat-tab>
+    </mat-tab-group>
+
+    <div>
+        tasks:
+        <div>Servicios de Tickets 
+            <p>GET ticket/id
+               GET tickets
+               POST ticket
+               PUT ticket
+               Delete ticket 
+            </p>
+        </div>
+        <div>Servicios de Participants 
+            <p>GET participant/id
+               GET participants
+               POST participant
+               PUT participant
+               Delete participant 
+            </p>
+        </div>
+        <div>Cards 
+            <p>GET Cards                
+            </p>
+        </div>
+        <div>usar sockets para poder poder estimar un ticket. 
+            iniciar juego
+            ingresan participantes (enviar link)
+            moderador <- elegir moderador
+            cada uno vota, avisar quien no voto.
+            moderador temrina la votacion o inicia otra vez.
+            <a href="https://medium.com/iamdeepinder/creating-a-real-time-app-with-angular-8-and-socket-io-with-nodejs-af63bd59a47f">copiate de aca</a>
+            
+            [Iniciar]
+            -----------------------------
+            setGame()
+            startGame()
+            startTIcketVoting()
+            vote()
+            saveGame()
+            nextTicket()
+            -----------------------------
+            Se setea el juego con los tickets y los participantes
+            inicia el juego, se elige el ticket
+            se inician los votos
+            cuando terminan de votar se ve el promedio y los votos de cada uno en rojo, verde y azul
+            se puede volver a votar, o ir al otro ticket
+            
+        </div>
+        <div>Servicios de backend para guardar un ticket</div>
+
+    </div>
