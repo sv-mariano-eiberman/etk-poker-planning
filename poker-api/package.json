@@ -20,8 +20,13 @@
   },
   "homepage": "https://github.com/bbachi/angular-nodejs-example#readme",
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "sqlite": "^4.0.14"
+    "sequelize": "^6.3.4",
+    "sqlite": "^4.0.14",
+    "sqlite3": "^5.0.0",
+    "uuid": "^8.3.0"
   },
   "devDependencies": {
     "del": "^5.1.0",
